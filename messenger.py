@@ -10,15 +10,15 @@ import sys
 def main():
     # Parse arguments
     arg_parser = ArgumentParser(description='Messenger', add_help=False)
-    arg_parser.add_argument('-m', '--mode', dest='mode', action='store',
+    arg_parser.add_argument('-m', '--mode',
             choices=['client','server'], required=True,
             help='Mode in which to run messenger')
-    arg_parser.add_argument('-p', '--port', dest='port', action='store',
+    arg_parser.add_argument('-p', '--port',
             type=int, required=True, help='''Port to connect to (in client 
             mode) or listen on (in server mode)''')
-    arg_parser.add_argument('-h', '--hostname', dest='hostname', action='store',
+    arg_parser.add_argument('-h', '--hostname',
             default='localhost', help='Hostname to connect to (in client mode)')
-    arg_parser.add_argument('-b', '--bot', dest='bot', action='store_true',
+    arg_parser.add_argument('-b', '--bot', action='store_true',
             help='Run bot (in server mode')
     settings = arg_parser.parse_args()
 
